@@ -10,9 +10,6 @@ return require('packer').startup(function()
 	  "folke/which-key.nvim",
 	  config = function()
 	    require("which-key").setup {
-	      -- your configuration comes here
-	      -- or leave it empty to use the default settings
-	      -- refer to the configuration section below
 	    }
 	  end
 	}
@@ -27,4 +24,16 @@ return require('packer').startup(function()
 		  { 'tiagofumo/vim-nerdtree-syntax-highlight' }
 	  }
 	}
+	use 'tpope/vim-surround'
+
+	-- LSP
+	use 'neovim/nvim-lspconfig'
+	use 'williamboman/nvim-lsp-installer'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/nvim-cmp'
+	use 'L3MON4D3/LuaSnip'
+	use 'saadparwaiz1/cmp_luasnip'
+
+
 end)

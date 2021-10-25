@@ -15,3 +15,4 @@ map('v', '<', '<gv', nor)
 
 -- NERDTree
 map('n', '<leader>e', ':NERDTreeToggle<cr>', nor)
+
