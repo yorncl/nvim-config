@@ -11,3 +11,7 @@ vim.g.mapleader = ' '
 -- Indentation
 map('v', '>', '>gv', nor)
 map('v', '<', '<gv', nor)
+
+
+-- NERDTree
+map('n', '<leader>e', ':NERDTreeToggle<cr>', nor)

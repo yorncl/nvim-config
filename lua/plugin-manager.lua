@@ -16,4 +16,15 @@ return require('packer').startup(function()
 	    }
 	  end
 	}
+	use {
+	  'nvim-telescope/telescope.nvim',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+	}
+	use { 'preservim/nerdtree',
+	  requires = {
+		  { 'Xuyuanp/nerdtree-git-plugin' },
+		  { 'ryanoasis/vim-devicons' },
+		  { 'tiagofumo/vim-nerdtree-syntax-highlight' }
+	  }
+	}
 end)
