@@ -7,5 +7,5 @@ vim.cmd("au ColorScheme * hi Normal ctermbg=none guibg=none")
 vim.cmd("set mouse=a")
 
 -- Timeout (for which key)
-vim.api.nvim_set_option('timeoutlen', 150)
+vim.api.nvim_set_option('timeoutlen', 500)
 
