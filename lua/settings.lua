@@ -1,3 +1,4 @@
+vim.wo.number = true
 
 -- Theme and transparency
 vim.cmd("colorscheme gruvbox")

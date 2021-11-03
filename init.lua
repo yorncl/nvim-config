@@ -1,6 +1,5 @@
 require('plugin-manager')
 require('remaps')
 require('settings')
-require('plugins/nvim-lsp-installer')
-require('plugins/nvim-cmp')
 require('plugins/which-key')
+--require('plugins/nvim-autopairs')

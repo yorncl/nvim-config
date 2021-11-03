@@ -17,23 +17,13 @@ return require('packer').startup(function()
 	  'nvim-telescope/telescope.nvim',
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use { 'preservim/nerdtree',
-	  requires = {
-		  { 'Xuyuanp/nerdtree-git-plugin' },
-		  { 'ryanoasis/vim-devicons' },
-		  { 'tiagofumo/vim-nerdtree-syntax-highlight' }
-	  }
-	}
+	use 'ryanoasis/vim-devicons'
+	use 'tiagofumo/vim-nerdtree-syntax-highlight'
 	use 'tpope/vim-surround'
-
-	-- LSP
-	use 'neovim/nvim-lspconfig'
-	use 'williamboman/nvim-lsp-installer'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/nvim-cmp'
-	use 'L3MON4D3/LuaSnip'
-	use 'saadparwaiz1/cmp_luasnip'
+	
+	-- COC for LSP
+	
+	use  { 'neoclide/coc.nvim', branch = 'release' } 
 
 
 end)
