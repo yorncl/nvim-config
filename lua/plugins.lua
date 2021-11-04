@@ -4,7 +4,7 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 	-- Color scheme
-	use 'morhetz/gruvbox'
+	use 'tomasr/molokai'
 
 	use {
 	  "folke/which-key.nvim",
@@ -22,8 +22,11 @@ return require('packer').startup(function()
 	use 'tpope/vim-surround'
 	
 	-- COC for LSP
-	
 	use  { 'neoclide/coc.nvim', branch = 'release' } 
+	use 'OmniSharp/omnisharp-vim'
+
+	-- Harpoon 
+	use 'ThePrimeagen/harpoon'
 
 
 end)

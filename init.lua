@@ -1,4 +1,4 @@
-require('plugin-manager')
+require('plugins')
 require('remaps')
 require('settings')
 require('plugins/which-key')

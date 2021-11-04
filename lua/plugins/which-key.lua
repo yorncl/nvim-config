@@ -8,7 +8,7 @@ wk.register({
 	t = { "<cmd>Telescope live_grep<cr>", "Live grep" }
   },
   h = { "<cmd>noh<cr>", "Remove highliting" },
-  e = { "<cmd>NERDTreeToggle<cr>", "Toggle file explorer" },
+  e = { "<Cmd>CocCommand explorer<CR>", "Toggle file explorer" },
   p = {
 	name = "Packer",
 	s = { "<cmd>PackerSync<cr>", "Sync plugins" }
