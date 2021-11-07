@@ -13,5 +13,7 @@ wk.register({
 	name = "Packer",
 	s = { "<cmd>PackerSync<cr>", "Sync plugins" }
   },
+  n = { ":<C-u>call append(line('.'),   repeat([''], v:count1))<CR>", "Insert new line after" },
+  N = { ":<C-u>call append(line('.')-1,   repeat([''], v:count1))<CR>", "Insert new line before" }
 }, { prefix = "<leader>" })
 

@@ -5,6 +5,7 @@ return require('packer').startup(function()
 
 	-- Color scheme
 	use 'tomasr/molokai'
+	use 'morhetz/gruvbox'
 
 	use {
 	  "folke/which-key.nvim",
@@ -17,8 +18,15 @@ return require('packer').startup(function()
 	  'nvim-telescope/telescope.nvim',
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use 'ryanoasis/vim-devicons'
+
+	-- Tree sitter
+	use 'nvim-treesitter/nvim-treesitter'
 	use 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+	-- Fonts and icons for file explorer
+	use 'ryanoasis/vim-devicons'
+
+	-- To surround text
 	use 'tpope/vim-surround'
 	
 	-- COC for LSP
@@ -27,6 +35,7 @@ return require('packer').startup(function()
 
 	-- Harpoon 
 	use 'ThePrimeagen/harpoon'
+
 
 
 end)
