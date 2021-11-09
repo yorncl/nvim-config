@@ -36,6 +36,7 @@ return require('packer').startup(function()
 	-- Harpoon 
 	use 'ThePrimeagen/harpoon'
 
-
+	-- Snippets 
+	use 'mlaursen/vim-react-snippets'
 
 end)

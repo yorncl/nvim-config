@@ -20,3 +20,4 @@ map('n', 'gj', ':lua require("harpoon.ui").nav_file(1)<CR>', nor)
 map('n', 'gk', ':lua require("harpoon.ui").nav_file(2)<CR>', nor)
 map('n', 'gl', ':lua require("harpoon.ui").nav_file(3)<CR>', nor)
 map('n', 'g;', ':lua require("harpoon.ui").nav_file(4)<CR>', nor)
+
