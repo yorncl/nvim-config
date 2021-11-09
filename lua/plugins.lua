@@ -39,4 +39,8 @@ return require('packer').startup(function()
 	-- Snippets 
 	use 'mlaursen/vim-react-snippets'
 
+	-- Coc extensions
+	use 'weirongxu/coc-explorer'
+	use 'neoclide/coc-snippets'
+
 end)
