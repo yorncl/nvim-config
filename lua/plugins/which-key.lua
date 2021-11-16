@@ -5,7 +5,8 @@ wk.register({
 	name = "Search",
     	f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
     	b = { "<cmd>Telescope buffers<cr>", "Search in buffers" }, -- create a binding with label
-	t = { "<cmd>Telescope live_grep<cr>", "Live grep" }
+	t = { "<cmd>Telescope live_grep<cr>", "Live grep" },
+	p = { "<cmd>Telescope file_browser<cr>", "Browse file in project" }
   },
   h = { "<cmd>noh<cr>", "Remove highliting" },
   e = { "<Cmd>CocCommand explorer<CR>", "Toggle file explorer" },

@@ -21,3 +21,6 @@ map('n', 'gk', ':lua require("harpoon.ui").nav_file(2)<CR>', nor)
 map('n', 'gl', ':lua require("harpoon.ui").nav_file(3)<CR>', nor)
 map('n', 'g;', ':lua require("harpoon.ui").nav_file(4)<CR>', nor)
 
+-- Buffer navigation
+map('n', 'gn', ':bn<CR>', nor)
+map('n', 'gp', ':bp<CR>', nor)

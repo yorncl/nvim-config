@@ -1,4 +1,19 @@
 {
 	"coc.source.OmniSharp.enable" : true,
-  	"coc.source.OmniSharp.triggerCharacters": "."
+    "coc.source.OmniSharp.triggerCharacters": ".",
+    "languageserver": {
+	    "ccls": {
+	      "command": "ccls",
+	      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+	      "rootPatterns": [".ccls-root", "compile_commands.json"],
+	      "initializationOptions": {
+		"cache": {
+		  "directory": ".ccls-cache"
+		},
+		"client": {
+		  "snippetSupport": true
+		}
+	      }
+	    }
+  }
 }
