@@ -43,4 +43,7 @@ return require('packer').startup(function()
 	use 'weirongxu/coc-explorer'
 	use 'neoclide/coc-snippets'
 
+	-- Commenting
+	use 'tpope/vim-commentary'
+
 end)
