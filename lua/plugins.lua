@@ -46,4 +46,6 @@ return require('packer').startup(function()
 	-- Commenting
 	use 'tpope/vim-commentary'
 
+	-- Commenting
+	use 'tpope/vim-sleuth'
 end)
