@@ -48,4 +48,7 @@ return require('packer').startup(function()
 
 	-- Commenting
 	use 'tpope/vim-sleuth'
+
+	-- Whitespaces
+	use 'ntpeters/vim-better-whitespace'
 end)
