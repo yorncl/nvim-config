@@ -51,4 +51,7 @@ return require('packer').startup(function()
 
 	-- Whitespaces
 	use 'ntpeters/vim-better-whitespace'
+
+	-- Svelte syntax highlighting
+	use 'evanleck/vim-svelte'
 end)
