@@ -9,12 +9,14 @@ wk.register({
 	p = { "<cmd>Telescope file_browser<cr>", "Browse file in project" }
   },
   h = { "<cmd>noh<cr>", "Remove highliting" },
-  e = { "<Cmd>CocCommand explorer<CR>", "Toggle file explorer" },
+  e = { ":NvimTreeToggle<CR>", "Toggle file explorer" },
   p = {
 	name = "Packer",
 	s = { "<cmd>PackerSync<cr>", "Sync plugins" }
   },
   n = { ":<C-u>call append(line('.'),   repeat([''], v:count1))<CR>", "Insert new line after" },
-  N = { ":<C-u>call append(line('.')-1,   repeat([''], v:count1))<CR>", "Insert new line before" }
+  N = { ":<C-u>call append(line('.')-1,   repeat([''], v:count1))<CR>", "Insert new line before" },
+  m = { ":Mason<CR>", "Show mason's interface" },
+  l = { ":LspInfo<CR>", "Show :LspInfo" }
 }, { prefix = "<leader>" })
 

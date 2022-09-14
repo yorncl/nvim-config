@@ -6,6 +6,7 @@ return require('packer').startup(function()
 	-- Color scheme
 	use 'tomasr/molokai'
 	use 'morhetz/gruvbox'
+	use 'sam4llis/nvim-tundra'
 
 	use {
 	  "folke/which-key.nvim",
@@ -21,37 +22,40 @@ return require('packer').startup(function()
 
 	-- Tree sitter
 	use 'nvim-treesitter/nvim-treesitter'
-	use 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 	-- Fonts and icons for file explorer
 	use 'ryanoasis/vim-devicons'
-
 	-- To surround text
 	use 'tpope/vim-surround'
-	
-	-- COC for LSP
-	use  { 'neoclide/coc.nvim', branch = 'release' } 
-	use 'OmniSharp/omnisharp-vim'
-
-	-- Harpoon 
+	-- Harpoon
 	use 'ThePrimeagen/harpoon'
-
-	-- Snippets 
+	-- Snippets
 	use 'mlaursen/vim-react-snippets'
-
-	-- Coc extensions
-	use 'weirongxu/coc-explorer'
-	use 'neoclide/coc-snippets'
-
 	-- Commenting
 	use 'tpope/vim-commentary'
-
 	-- Commenting
 	use 'tpope/vim-sleuth'
-
 	-- Whitespaces
 	use 'ntpeters/vim-better-whitespace'
 
-	-- Svelte syntax highlighting
-	use 'evanleck/vim-svelte'
+	-- Mason with recommended lpugins
+	use {
+	    "williamboman/mason.nvim",
+	    "williamboman/mason-lspconfig.nvim",
+	    "neovim/nvim-lspconfig",
+	}
+	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	use 'L3MON4D3/LuaSnip' -- Snippets plugin
+	use 'mfussenegger/nvim-dap'
+	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'mfussenegger/nvim-lint'
+	use 'mhartington/formatter.nvim'
+	use {
+	  'kyazdani42/nvim-tree.lua',
+	  requires = {
+	    'kyazdani42/nvim-web-devicons', -- optional, for file icons
+	  },
+	  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
 end)
