@@ -33,3 +33,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
   }
 )
+
+require("lualine").setup()
+require("symbols-outline").setup()

@@ -14,9 +14,11 @@ wk.register({
 	name = "Packer",
 	s = { "<cmd>PackerSync<cr>", "Sync plugins" }
   },
+  S = { ":SymbolsOutline<CR>" , "Toggle symbols view" },
   n = { ":<C-u>call append(line('.'),   repeat([''], v:count1))<CR>", "Insert new line after" },
   N = { ":<C-u>call append(line('.')-1,   repeat([''], v:count1))<CR>", "Insert new line before" },
   m = { ":Mason<CR>", "Show mason's interface" },
+  l = { ":LspInfo<CR>", "Show :LspInfo" },
   l = { ":LspInfo<CR>", "Show :LspInfo" }
 }, { prefix = "<leader>" })
 

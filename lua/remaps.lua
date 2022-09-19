@@ -19,10 +19,9 @@ map('n', 'ga', ':lua require("harpoon.mark").add_file()<CR>', nor)
 map('n', 'gj', ':lua require("harpoon.ui").nav_file(1)<CR>', nor)
 map('n', 'gk', ':lua require("harpoon.ui").nav_file(2)<CR>', nor)
 map('n', 'gl', ':lua require("harpoon.ui").nav_file(3)<CR>', nor)
-map('n', 'g;', ':lua require("harpoon.ui").nav_file(4)<CR>', nor)
-map('n', 'gJ', ':lua require("harpoon.ui").nav_file(5)<CR>', nor)
-map('n', 'gK', ':lua require("harpoon.ui").nav_file(6)<CR>', nor)
-map('n', 'gL', ':lua require("harpoon.ui").nav_file(7)<CR>', nor)
+map('n', 'gJ', ':lua require("harpoon.ui").nav_file(4)<CR>', nor)
+map('n', 'gK', ':lua require("harpoon.ui").nav_file(5)<CR>', nor)
+map('n', 'gL', ':lua require("harpoon.ui").nav_file(6)<CR>', nor)
 
 -- Buffer navigation
 map('n', 'gn', ':bn<CR>', nor)

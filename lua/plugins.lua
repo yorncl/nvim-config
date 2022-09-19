@@ -39,9 +39,9 @@ return require('packer').startup(function()
 
 	-- Mason with recommended lpugins
 	use {
-	    "williamboman/mason.nvim",
-	    "williamboman/mason-lspconfig.nvim",
-	    "neovim/nvim-lspconfig",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
 	}
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
 	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
@@ -52,10 +52,20 @@ return require('packer').startup(function()
 	use 'mfussenegger/nvim-lint'
 	use 'mhartington/formatter.nvim'
 	use {
-	  'kyazdani42/nvim-tree.lua',
-	  requires = {
-	    'kyazdani42/nvim-web-devicons', -- optional, for file icons
-	  },
-	  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+			'kyazdani42/nvim-web-devicons', -- optional, for file icons
+		},
+		tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
+	use 'tpope/vim-fugitive'
+	use 'simrat39/symbols-outline.nvim'
+	use {
+		'romgrk/barbar.nvim',
+		requires = {'kyazdani42/nvim-web-devicons'}
 	}
 end)
