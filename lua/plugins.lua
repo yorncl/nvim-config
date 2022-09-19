@@ -68,4 +68,8 @@ return require('packer').startup(function()
 		'romgrk/barbar.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
+	use {
+		'nvim-treesitter/nvim-treesitter-context',
+		requires = { 'nvim-treesitter/nvim-treesitter' }
+	}
 end)

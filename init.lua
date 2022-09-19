@@ -3,6 +3,7 @@ require('settings')
 require('plugins')
 require('nvim-cmp-conf')
 require('which-key-conf')
+require('tabline-conf')
 require("mason").setup()
 
 
