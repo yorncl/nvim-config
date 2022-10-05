@@ -7,6 +7,7 @@ return require('packer').startup(function()
 	use 'tomasr/molokai'
 	use 'morhetz/gruvbox'
 	use 'sam4llis/nvim-tundra'
+	use 'navarasu/onedark.nvim'
 
 	use {
 	  "folke/which-key.nvim",
@@ -48,9 +49,13 @@ return require('packer').startup(function()
 	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 	use 'L3MON4D3/LuaSnip' -- Snippets plugin
 	use 'mfussenegger/nvim-dap'
-	use 'jose-elias-alvarez/null-ls.nvim'
-	use 'mfussenegger/nvim-lint'
-	use 'mhartington/formatter.nvim'
+	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		config = function()
+			require("null-ls").setup()
+		end,
+		requires = { "nvim-lua/plenary.nvim" },
+	})
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = {

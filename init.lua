@@ -31,9 +31,16 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     -- delay update diagnostics
     update_in_insert = false,
     -- display_diagnostic_autocmds = { "InsertLeave" },
-
   }
 )
 
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.formatting.autopep8,
+        require("null-ls").builtins.diagnostics.eslint,
+    },
+})
+
 require("lualine").setup()
 require("symbols-outline").setup()
+require('onedark').load()

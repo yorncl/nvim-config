@@ -1,9 +1,12 @@
 vim.wo.number = true
 
 -- Theme and transparency
-vim.cmd('colorscheme gruvbox')
+require('onedark').setup {
+   style = 'deep'
+}
 
-vim.cmd(":hi Normal ctermbg=none guibg=none")
+-- Background transparency
+-- vim.cmd(":hi Normal ctermbg=none guibg=none")
 
 -- Mouse
 vim.cmd("set mouse=a")
