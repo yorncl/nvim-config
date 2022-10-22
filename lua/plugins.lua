@@ -4,9 +4,6 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 	-- Color scheme
-	use 'tomasr/molokai'
-	use 'morhetz/gruvbox'
-	use 'sam4llis/nvim-tundra'
 	use 'navarasu/onedark.nvim'
 
 	use {
@@ -77,4 +74,5 @@ return require('packer').startup(function()
 		'nvim-treesitter/nvim-treesitter-context',
 		requires = { 'nvim-treesitter/nvim-treesitter' }
 	}
+	use "ggandor/leap.nvim"
 end)

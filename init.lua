@@ -44,3 +44,5 @@ require("null-ls").setup({
 require("lualine").setup()
 require("symbols-outline").setup()
 require('onedark').load()
+require('leap').set_default_keymaps()
+

@@ -6,7 +6,7 @@ require('onedark').setup {
 }
 
 -- Background transparency
--- vim.cmd(":hi Normal ctermbg=none guibg=none")
+--vim.cmd(":hi Normal ctermbg=none guibg=none")
 
 -- Mouse
 vim.cmd("set mouse=a")
@@ -19,3 +19,4 @@ vim.api.nvim_set_option('timeoutlen', 500)
 
 -- Case-insensitive search
 vim.cmd("set ignorecase")
+

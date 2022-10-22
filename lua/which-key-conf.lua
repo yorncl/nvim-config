@@ -19,6 +19,6 @@ wk.register({
   N = { ":<C-u>call append(line('.')-1,   repeat([''], v:count1))<CR>", "Insert new line before" },
   m = { ":Mason<CR>", "Show mason's interface" },
   l = { ":LspInfo<CR>", "Show :LspInfo" },
-  l = { ":LspInfo<CR>", "Show :LspInfo" }
+  C = { ":Telescope colorscheme<CR>", "Change colorscheme" }
 }, { prefix = "<leader>" })
 
