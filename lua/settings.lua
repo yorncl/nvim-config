@@ -5,6 +5,10 @@ require('onedark').setup {
    style = 'deep'
 }
 
+
+-- Encoding, useful for terminal icons and such
+vim.cmd("set encoding=UTF-8")
+
 -- Background transparency
 --vim.cmd(":hi Normal ctermbg=none guibg=none")
 

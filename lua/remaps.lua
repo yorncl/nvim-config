@@ -12,6 +12,9 @@ vim.g.mapleader = ' '
 map('v', '>', '>gv', nor)
 map('v', '<', '<gv', nor)
 
+-- Commenting with tpope/commentary
+map('n', '<c-_>', ':Commentary<CR>', nor)
+map('v', '<c-_>', ':Commentary<CR>', nor)
 
 --Harpoon
 map('n', 'gH', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', nor)
