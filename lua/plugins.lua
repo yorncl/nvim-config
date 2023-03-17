@@ -4,18 +4,18 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 	-- Color scheme
-	use 'navarasu/onedark.nvim'
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 	use {
-	  "folke/which-key.nvim",
-	  config = function()
-	    require("which-key").setup {
-	    }
-	  end
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup {
+			}
+		end
 	}
 	use {
-	  'nvim-telescope/telescope.nvim',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+		'nvim-telescope/telescope.nvim',
+		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
 	-- Tree sitter
@@ -32,19 +32,44 @@ return require('packer').startup(function()
 	use 'tpope/vim-commentary'
 	-- Commenting
 	use 'tpope/vim-sleuth'
-	-- Whitespaces
-	use 'ntpeters/vim-better-whitespace'
 
-	-- Mason with recommended lpugins
+	-- functions signatures
+	use "ray-x/lsp_signature.nvim"
+
+	-- Copilot
 	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
+	  "zbirenbaum/copilot.lua",
+	  cmd = "Copilot",
+	  event = "InsertEnter",
+	  config = function()
+	    require("copilot").setup({})
+	  end,
 	}
-	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-	use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
+	use {
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v1.x',
+		requires = {
+			-- LSP Support
+			{'neovim/nvim-lspconfig'},             -- Required
+			{'williamboman/mason.nvim'},           -- Optional
+			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},         -- Required
+			{'hrsh7th/cmp-nvim-lsp'},     -- Required
+			{'hrsh7th/cmp-buffer'},       -- Optional
+			{'hrsh7th/cmp-path'},         -- Optional
+			{'saadparwaiz1/cmp_luasnip'}, -- Optional
+			{'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+
+			-- Snippets
+			{'L3MON4D3/LuaSnip'},             -- Required
+			{'rafamadriz/friendly-snippets'}, -- Optional
+		}
+	}
+
 	use 'mfussenegger/nvim-dap'
 	use({
 		"jose-elias-alvarez/null-ls.nvim",

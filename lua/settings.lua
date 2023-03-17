@@ -1,10 +1,7 @@
 vim.wo.number = true
 
--- Theme and transparency
-require('onedark').setup {
-   style = 'deep'
-}
-
+-- Colorscheme
+vim.cmd('colorscheme catppuccin-mocha')
 
 -- Encoding, useful for terminal icons and such
 vim.cmd("set encoding=UTF-8")
