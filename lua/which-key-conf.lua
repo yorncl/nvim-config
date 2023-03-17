@@ -24,6 +24,7 @@ wk.register({
 	s = { ":Telescope colorscheme<CR>", "Change colorscheme" },
 	l = { ":colorscheme catppuccin-latte<CR>", "catppuccin light" },
 	d = { ":colorscheme catppuccin-mocha<CR>", "catppuccin dark" },
-  }
+  },
+  q = { f = { ":qa!<cr>", "Quit all" } },
 }, { prefix = "<leader>" })
 

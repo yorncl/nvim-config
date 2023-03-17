@@ -6,6 +6,9 @@ return require('packer').startup(function()
 	-- Color scheme
 	use { "catppuccin/nvim", as = "catppuccin" }
 
+	-- Copilot
+	use { "github/copilot.vim" }
+
 	use {
 		"folke/which-key.nvim",
 		config = function()
@@ -35,16 +38,6 @@ return require('packer').startup(function()
 
 	-- functions signatures
 	use "ray-x/lsp_signature.nvim"
-
-	-- Copilot
-	use {
-	  "zbirenbaum/copilot.lua",
-	  cmd = "Copilot",
-	  event = "InsertEnter",
-	  config = function()
-	    require("copilot").setup({})
-	  end,
-	}
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',

@@ -30,3 +30,6 @@ map('n', 'gL', ':lua require("harpoon.ui").nav_file(6)<CR>', nor)
 map('n', 'L', ':bn<CR>', nor)
 map('n', 'H', ':bp<CR>', nor)
 
+
+-- remap ctrl c to escape for copilot
+map('i', '<C-c>', '<Esc>', nor)

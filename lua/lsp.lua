@@ -1,56 +1,29 @@
--- Learn the keybindings, see :help lsp-zero-keybindings
--- Learn to configure LSP servers, see :help lsp-zero-api-showcase
-local lsp = require('lsp-zero')
-lsp.preset('lsp-compe')
-
-lsp.setup()
-
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
-
-local cmp = require('cmp')
-
-local has_words_before = function()
-  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_text(0, line-1, 0, line-1, col, {})[1]:match("^%s*$") == nil
-end
-
-local cmp_config = lsp.defaults.cmp_config({
- mapping = {
-	["<Tab>"] = vim.schedule_wrap(function(fallback)
-	      if cmp.visible() and has_words_before() then
-		cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-	      else
-		fallback()
-	      end
-	    end),
-	["<CR>"] = cmp.mapping.confirm({
-      -- this is the important line
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = false,
-    }),
-  },
-  window = {
-    completion = cmp.config.window.bordered()
-  },
-   sources = { {
-      name = "path"
-    }, {
-      keyword_length = 3,
-      name = "nvim_lsp"
-    }, {
-      keyword_length = 3,
-      name = "buffer"
-    }, {
-      keyword_length = 2,
-      name = "luasnip"
-    }, {
-	name = 'nvim_lsp_signature_help'
-    },
-    -- { name = "copilot", group_index = 2 },
-    },
+local lsp = require('lsp-zero').preset({
+  name = 'minimal',
+  set_lsp_keymaps = true,
+  manage_nvim_cmp = true,
+  suggest_lsp_servers = false,
 })
 
--- print(vim.inspect(cmp_config))
+-- Copied from ThePrimagean's config
+-- https://github.com/ThePrimeagen/init.lua/blob/master/after/plugin/lsp.lua
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_mappings = lsp.defaults.cmp_mappings({
+  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ["<C-Space>"] = cmp.mapping.complete(),
+})
 
-cmp.setup(cmp_config)
+cmp_mappings['<Tab>'] = nil
+cmp_mappings['<S-Tab>'] = nil
+
+lsp.setup_nvim_cmp({
+  mapping = cmp_mappings
+})
+
+-- (Optional) Configure lua language server for neovim
+lsp.nvim_workspace()
+
+lsp.setup()
