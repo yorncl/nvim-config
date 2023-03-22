@@ -26,5 +26,6 @@ wk.register({
 	d = { ":colorscheme catppuccin-mocha<CR>", "catppuccin dark" },
   },
   q = { f = { ":qa!<cr>", "Quit all" } },
+  z = { ":ZenMode<CR>", "Toggle Zen mode" },
 }, { prefix = "<leader>" })
 

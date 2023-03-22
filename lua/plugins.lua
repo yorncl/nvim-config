@@ -93,4 +93,11 @@ return require('packer').startup(function()
 		requires = { 'nvim-treesitter/nvim-treesitter' }
 	}
 	use "ggandor/leap.nvim"
+	-- Lua
+	use {
+	  "folke/zen-mode.nvim",
+	  config = function()
+	    require("zen-mode").setup {}
+	  end
+	}
 end)

@@ -7,7 +7,7 @@ vim.cmd('colorscheme catppuccin-mocha')
 vim.cmd("set encoding=UTF-8")
 
 -- Background transparency
---vim.cmd(":hi Normal ctermbg=none guibg=none")
+-- vim.cmd(":hi Normal ctermbg=none guibg=none")
 
 -- Mouse
 vim.cmd("set mouse=a")
