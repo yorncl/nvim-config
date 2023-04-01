@@ -26,10 +26,6 @@ map('n', 'gJ', ':lua require("harpoon.ui").nav_file(4)<CR>', nor)
 map('n', 'gK', ':lua require("harpoon.ui").nav_file(5)<CR>', nor)
 map('n', 'gL', ':lua require("harpoon.ui").nav_file(6)<CR>', nor)
 
--- Buffer navigation
-map('n', 'L', ':bn<CR>', nor)
-map('n', 'H', ':bp<CR>', nor)
-
 
 -- remap ctrl c to escape for copilot
 map('i', '<C-c>', '<Esc>', nor)
