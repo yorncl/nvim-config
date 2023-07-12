@@ -16,6 +16,9 @@ return require('packer').startup(function(use)
 	-- Packer
 	use 'wbthomason/packer.nvim'
 
+	-- Startify
+	use 'mhinz/vim-startify'
+
 	-- Color scheme
 	use { "catppuccin/nvim", as = "catppuccin" }
 

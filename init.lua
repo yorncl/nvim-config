@@ -4,6 +4,7 @@ require('lsp')
 require('settings')
 require('which-key-conf')
 require('tabline-conf')
+require('startify')
 
 
 
