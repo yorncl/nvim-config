@@ -16,9 +16,6 @@ return require('packer').startup(function(use)
 	-- Packer
 	use 'wbthomason/packer.nvim'
 
-	-- Startify
-	use 'mhinz/vim-startify'
-
 	-- Color scheme
 	use { "catppuccin/nvim", as = "catppuccin" }
 
@@ -43,6 +40,8 @@ return require('packer').startup(function(use)
 	use 'ryanoasis/vim-devicons'
 	-- To surround text
 	use 'tpope/vim-surround'
+	-- To auto manage sessions
+	use 'tpope/vim-obsession'
 	-- Harpoon
 	use 'ThePrimeagen/harpoon'
 	-- Snippets
