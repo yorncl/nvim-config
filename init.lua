@@ -5,6 +5,27 @@ require('settings')
 require('which-key-conf')
 require('tabline-conf')
 
+require 'colorizer'.setup {
+  'css';
+  'javascript';
+  html = {
+    mode = 'foreground';
+  }
+}
+
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    transparent_background = true, -- disables setting the background color.
+    integrations = {
+        nvimtree = {
+          enabled = true,
+          transparent_panel = true,
+        }
+    },
+})
+
+-- setup must be called before loading
+vim.cmd.colorscheme "catppuccin"
 
 
 -- disable netrw
