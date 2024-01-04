@@ -1,9 +1,18 @@
 require('plugins')
 require('remaps')
+
+-- needs to be before lsp
+require("neodev").setup()
+
+-- setup in its own file
 require('lsp')
+
 require('settings')
 require('which-key-conf')
 require('tabline-conf')
+
+require("mason").setup()
+require("mason-nvim-dap").setup()
 
 require 'colorizer'.setup {
   'css';

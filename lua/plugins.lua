@@ -15,6 +15,8 @@ return require('packer').startup(function(use)
 
 	-- Packer
 	use 'wbthomason/packer.nvim'
+	use "folke/neodev.nvim"
+
 
 	-- Color scheme
 	use { "catppuccin/nvim", as = "catppuccin" }
@@ -78,7 +80,14 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	use 'mfussenegger/nvim-dap'
+	-- Debugger adapter protocol
+	use {
+	    "williamboman/mason.nvim",
+	    "mfussenegger/nvim-dap",
+	    "jay-babu/mason-nvim-dap.nvim",
+	}
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()
