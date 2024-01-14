@@ -1,134 +1,108 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
-end
+require('lazy').setup({
 
-local packer_bootstrap = ensure_packer()
-
-return require('packer').startup(function(use)
-
-	-- Packer
-	use 'wbthomason/packer.nvim'
-	use "folke/neodev.nvim"
-
+	-- LSP setup for lua neovim development of plugins and config
+	"folke/neodev.nvim",
 
 	-- Color scheme
-	use { "catppuccin/nvim", as = "catppuccin" }
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
 	-- Copilot
-	use { "github/copilot.vim" }
+	{ "github/copilot.vim" },
 
-	use {
+	{
+		-- helper menu for keybindings
 		"folke/which-key.nvim",
 		config = function()
 			require("which-key").setup {
 			}
 		end
-	}
-	use {
+	},
+	{
+		-- Fuzzy finder
 		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+		dependencies = { {'nvim-lua/plenary.nvim'} }
+	},
 
 	-- Tree sitter
-	use 'nvim-treesitter/nvim-treesitter'
+	'nvim-treesitter/nvim-treesitter',
+
+	{
+	  "nvim-tree/nvim-tree.lua",
+	  version = "*",
+	  lazy = false,
+	  dependencies = {
+	    "nvim-tree/nvim-web-devicons",
+	  },
+	  config = function()
+	    require("nvim-tree").setup {}
+	  end,
+	},
 	-- Fonts and icons for file explorer
-	use 'ryanoasis/vim-devicons'
+	'ryanoasis/vim-devicons',
 	-- To surround text
-	use 'tpope/vim-surround'
+	'tpope/vim-surround',
 	-- To auto manage sessions
-	use 'tpope/vim-obsession'
+	'tpope/vim-obsession',
 	-- Harpoon
-	use 'ThePrimeagen/harpoon'
+	'ThePrimeagen/harpoon',
 	-- Snippets
-	use 'mlaursen/vim-react-snippets'
+	'mlaursen/vim-react-snippets',
 	-- Commenting
-	use 'tpope/vim-commentary'
+	'tpope/vim-commentary',
 	-- Commenting
-	use 'tpope/vim-sleuth'
+	'tpope/vim-sleuth',
 
 	-- functions signatures
-	use "ray-x/lsp_signature.nvim"
+	"ray-x/lsp_signature.nvim",
 
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v1.x',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+	--- Uncomment the two plugins below if you want to manage the language servers from neovim
+	--- and read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
+	{'williamboman/mason.nvim'},
+	{'williamboman/mason-lspconfig.nvim'},
+	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+	{'neovim/nvim-lspconfig'},
+	{'hrsh7th/cmp-nvim-lsp'},
+	{'hrsh7th/nvim-cmp'},
+	{'L3MON4D3/LuaSnip'},
 
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},         -- Required
-			{'hrsh7th/cmp-nvim-lsp'},     -- Required
-			{'hrsh7th/cmp-buffer'},       -- Optional
-			{'hrsh7th/cmp-path'},         -- Optional
-			{'saadparwaiz1/cmp_luasnip'}, -- Optional
-			{'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},             -- Required
-			{'rafamadriz/friendly-snippets'}, -- Optional
-		}
-	}
+	-- code context status bar TODO implement the setup function
+	{
+	    "SmiteshP/nvim-navic",
+	    dependencies = "neovim/nvim-lspconfig"
+	},
 
 	-- Debugger adapter protocol
-	use {
-	    "williamboman/mason.nvim",
-	    "mfussenegger/nvim-dap",
-	    "jay-babu/mason-nvim-dap.nvim",
-	}
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	{"jay-babu/mason-nvim-dap.nvim"},
+	{ "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
 
-	use({
+	{
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()
 			require("null-ls").setup()
 		end,
-		requires = { "nvim-lua/plenary.nvim" },
-	})
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = {
-			'kyazdani42/nvim-web-devicons', -- optional, for file icons
-		},
-		tag = 'nightly' -- optional, updated every week. (see issue #1193)
-	}
-	use {
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
-	use 'tpope/vim-fugitive'
-	use 'simrat39/symbols-outline.nvim'
-	use {
+		dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
+	},
+	'simrat39/symbols-outline.nvim',
+	{
 		'romgrk/barbar.nvim',
-		requires = {'kyazdani42/nvim-web-devicons'}
-	}
-	use {
+		dependencies = {'kyazdani42/nvim-web-devicons'}
+	},
+	{
 		'nvim-treesitter/nvim-treesitter-context',
-		requires = { 'nvim-treesitter/nvim-treesitter' }
-	}
-	use "ggandor/leap.nvim"
-	use {
+		dependencies = { 'nvim-treesitter/nvim-treesitter' }
+	},
+	"ggandor/leap.nvim",
+	{
 	  "folke/zen-mode.nvim",
 	  config = function()
 	    require("zen-mode").setup {}
 	  end
-	}
+	},
 
-	use "norcalli/nvim-colorizer.lua"
+	"norcalli/nvim-colorizer.lua",
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-	  require('packer').sync()
-	end
-end)
+})
