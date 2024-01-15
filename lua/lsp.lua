@@ -35,6 +35,15 @@ require("lualine").setup({
     },
 })
 
+
+local cmp = require('cmp')
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    -- confirm completion
+    ['<C-y>'] = cmp.mapping.confirm({select = true}),
+  })
+})
+
 lsp_zero.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
   require("mappings").setup_lsp(opts)
@@ -43,3 +52,7 @@ lsp_zero.on_attach(function(client, bufnr)
       navic.attach(client, bufnr)
   end
 end)
+
+
+require('mason-null-ls').setup({
+})

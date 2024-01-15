@@ -30,18 +30,19 @@ local mappings = {
 
   -- Diverse menus
   ["Show mason's interface"] = {'n', '<leader>Im', ':Mason<CR>'},
-  ["Show :LspInfo"] = {'n', '<leader>Il', ':LspInfo<CR>'},
+  ["Show lsp info"] = {'n', '<leader>Il', ':LspInfo<CR>'},
+  ["Show Lazy plugin manager"] = {'n', '<leader>Ip', ':Lazy<CR>'},
 
   ["Remove highlithing"] = {'n', '<leader>h', ':noh<CR>'},
 
   -- append line directly above or below the current line
   ["Append line below"] = {'n', '<leader>o', ':<C-u>call append(line("."),   repeat([""], v:count1))<CR>'},
-  ["Append line above"] = {'n', '<leader>O', ':<C-u>call append(line(".")-1,   repeat([""], v:count1))<CR>'},
-
-  -- Commenting with tpope/commentary
+  ["Append line above"] = {'n', '<leader>O', ':<C-u>call append(line(".")-1,   repeat([""], v:count1))<CR>'}, -- Commenting with tpope/commentary
   ["Toggle comment on line"] = {'n', '<C-_>', ':Commentary<CR>'},
   ["Toggle comment on selection"] = {'v', '<C-_>', ':Commentary<CR>'},
   ["Control C to escape"] = {'i', '<C-c>', '<Esc>'},
+
+  ["Format this buffer"] = {'n', '<leader>f', function() vim.lsp.buf.format() end},
 
   -- Quit all 
   ["Quit all"] = {'n', '<leader>qf', ':qa!<cr>'},

@@ -24,7 +24,7 @@ require('lazy').setup({
 	},
 
 	-- Tree sitter
-	'nvim-treesitter/nvim-treesitter',
+	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
 	{
 	  "nvim-tree/nvim-tree.lua",
@@ -64,6 +64,15 @@ require('lazy').setup({
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
 	{'L3MON4D3/LuaSnip'},
+	{'nvimtools/none-ls.nvim', dependencies='nvim-lua/plenary.nvim'},
+	{
+	    "jay-babu/mason-null-ls.nvim",
+	    event = { "BufReadPre", "BufNewFile" },
+	    dependencies = {
+	      "williamboman/mason.nvim",
+	      "nvimtools/none-ls.nvim",
+	    },
+	},
 
 	-- code context status bar TODO implement the setup function
 	{
@@ -75,13 +84,6 @@ require('lazy').setup({
 	{"jay-babu/mason-nvim-dap.nvim"},
 	{ "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
 
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("null-ls").setup()
-		end,
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }

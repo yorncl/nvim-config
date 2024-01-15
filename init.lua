@@ -20,7 +20,8 @@ require("neodev").setup()
 
 -- setup in its own file
 require('lsp')
-
+require('treesitter')
+require('format')
 require('settings')
 require('tabline-conf')
 
