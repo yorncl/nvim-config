@@ -21,12 +21,11 @@ require("neodev").setup()
 -- setup in its own file
 require('lsp')
 require('treesitter')
-require('format')
 require('settings')
 require('tabline-conf')
 
 require("mason").setup()
-require("mason-nvim-dap").setup()
+require('dap-conf')
 
 require 'colorizer'.setup {
   'css';
@@ -48,6 +47,11 @@ require("catppuccin").setup({
 })
 -- setup must be called before loading
 vim.cmd.colorscheme "catppuccin"
+
+-- leap motions
+vim.keymap.set('n', 's', function ()
+  require('leap').leap { target_windows = { vim.api.nvim_get_current_win() } }
+end)
 
 
 -- disable netrw
