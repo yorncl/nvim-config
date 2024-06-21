@@ -63,4 +63,3 @@ require("nvim-tree").setup()
 require("symbols-outline").setup()
 require('leap').set_default_keymaps()
 require "lsp_signature".setup({})
-

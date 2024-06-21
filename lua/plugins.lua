@@ -82,7 +82,7 @@ require('lazy').setup({
 
 	-- Debugger adapter protocol
 	{"jay-babu/mason-nvim-dap.nvim"},
-	{ "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
+	{ "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
 
 	{
 		'nvim-lualine/lualine.nvim',
@@ -106,5 +106,9 @@ require('lazy').setup({
 	},
 
 	"norcalli/nvim-colorizer.lua",
+
+	{ dir = "~/.config/nvim/lua/treecontext.lua", as = "mine" },
+
+	{"tpope/vim-fugitive"},
 
 })
