@@ -28,30 +28,47 @@ require("mason").setup()
 require('dap-conf')
 
 require 'colorizer'.setup {
-  'css';
-  'javascript';
+  'css',
+  'javascript',
   html = {
-    mode = 'foreground';
+    mode = 'foreground',
   }
 }
 
 require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    transparent_background = true, -- disables setting the background color.
-    integrations = {
-        nvimtree = {
-          enabled = true,
-          transparent_panel = true,
-        }
-    },
+  flavour = "mocha",                -- latte, frappe, macchiato, mocha
+  transparent_background = false,   -- disables setting the background color.
+  integrations = {
+    nvimtree = {
+      enabled = true,
+      transparent_panel = true,
+    }
+  },
+  color_overrides = {
+    mocha = {
+      base = "#000000",
+      crust = "#000000",
+      mantle = "#000000",
+    }
+  },
 })
 -- setup must be called before loading
 vim.cmd.colorscheme "catppuccin"
 
 -- leap motions
-vim.keymap.set('n', 's', function ()
+vim.keymap.set('n', 's', function()
   require('leap').leap { target_windows = { vim.api.nvim_get_current_win() } }
 end)
+
+-- Straight from stackoverflow
+-- apprently a fix for a weird telescope behaviour where the selected file opens in insert mode
+vim.api.nvim_create_autocmd("WinLeave", {
+  callback = function()
+    if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "i", false)
+    end
+  end,
+})
 
 
 -- disable netrw

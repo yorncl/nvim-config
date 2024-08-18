@@ -1,7 +1,10 @@
 vim.wo.number = true
 
 -- Colorscheme
-vim.cmd('colorscheme catppuccin-mocha')
+-- vim.cmd('colorscheme catppuccin-mocha')
+--
+vim.o.termguicolors = true
+
 
 -- Encoding, useful for terminal icons and such
 vim.cmd("set encoding=UTF-8")

@@ -26,13 +26,14 @@ local mappings = {
   ["Indent left"] = {'v', '<', '<gv'},
 
   ["Toggle file explorer"] = {'n', '<leader>e', ':NvimTreeToggle<CR>'},
-  ["Toggle symbols outline"] = {'n', '<leader>s', ':SymbolsOutline<CR>'},
+  ["Toggle symbols outline"] = {'n', '<leader>S', ':SymbolsOutline<CR>'},
   ["Toggle Zen mode"] = {'n', '<leader>z', ':ZenMode<CR>'},
 
   -- Diverse menus
   ["Show mason's interface"] = {'n', '<leader>Im', ':Mason<CR>'},
   ["Show lsp info"] = {'n', '<leader>Il', ':LspInfo<CR>'},
   ["Show Lazy plugin manager"] = {'n', '<leader>Ip', ':Lazy<CR>'},
+  ["Select Colorscheme"] = {'n', '<leader>Ic', ':Telescope colorscheme<CR>'},
 
   ["Remove highlithing"] = {'n', '<leader>h', ':noh<CR>'},
 
