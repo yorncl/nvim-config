@@ -35,25 +35,28 @@ require 'colorizer'.setup {
   }
 }
 
-require("catppuccin").setup({
-  flavour = "mocha",                -- latte, frappe, macchiato, mocha
-  transparent_background = false,   -- disables setting the background color.
-  integrations = {
-    nvimtree = {
-      enabled = true,
-      transparent_panel = true,
-    }
-  },
-  color_overrides = {
-    mocha = {
-      base = "#000000",
-      crust = "#000000",
-      mantle = "#000000",
-    }
-  },
-})
+-- require("catppuccin").setup({
+--   flavour = "mocha",                -- latte, frappe, macchiato, mocha
+--   transparent_background = false,   -- disables setting the background color.
+--   integrations = {
+--     nvimtree = {
+--       enabled = true,
+--       transparent_panel = true,
+--     }
+--   },
+--   color_overrides = {
+--     mocha = {
+--       base = "#000000",
+--       crust = "#000000",
+--       mantle = "#000000",
+--     }
+--   },
+-- })
 -- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
+-- vim.cmd.colorscheme "catppuccin"
+
+-- vim.cmd.colorscheme "oxocarbon"
+vim.opt.background = "dark" -- set this to dark or light
 
 -- leap motions
 vim.keymap.set('n', 's', function()

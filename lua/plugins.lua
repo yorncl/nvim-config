@@ -5,6 +5,8 @@ require('lazy').setup({
 
 	-- Color scheme
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "nyoom-engineering/oxocarbon.nvim" },
+
 
 	-- Copilot
 	{ "github/copilot.vim" },

@@ -34,6 +34,13 @@ local mappings = {
   ["Show lsp info"] = {'n', '<leader>Il', ':LspInfo<CR>'},
   ["Show Lazy plugin manager"] = {'n', '<leader>Ip', ':Lazy<CR>'},
   ["Select Colorscheme"] = {'n', '<leader>Ic', ':Telescope colorscheme<CR>'},
+  ["Toggle dark/light theme"] = {'n', '<leader>C', function()
+    if vim.opt.background._value == "dark" then
+      vim.opt.background = "light"
+    else
+      vim.opt.background = "dark"
+    end
+  end},
 
   ["Remove highlithing"] = {'n', '<leader>h', ':noh<CR>'},
 
@@ -61,6 +68,7 @@ local mappings = {
   ["dap step over"] = {'n', '<leader>do', function() dap.step_over() end},
   ["dap step into"] = {'n', '<leader>di', function() dap.step_into() end},
   ["dap terminate"] = {'n', '<leader>dt', ":DapTerminate<CR>"},
+
 
 }
 
