@@ -109,8 +109,6 @@ require('lazy').setup({
 
 	"norcalli/nvim-colorizer.lua",
 
-	{ dir = "~/.config/nvim/lua/treecontext.lua", as = "mine" },
-
 	{"tpope/vim-fugitive"},
 
 })
