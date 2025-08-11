@@ -57,24 +57,18 @@ require('lazy').setup({
 	-- functions signatures
 	"ray-x/lsp_signature.nvim",
 
-	--- Uncomment the two plugins below if you want to manage the language servers from neovim
-	--- and read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 	{'williamboman/mason.nvim'},
-	{'williamboman/mason-lspconfig.nvim'},
-	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	{'neovim/nvim-lspconfig'},
+	{
+		"mason-org/mason-lspconfig.nvim",
+		opts = {},
+		dependencies = { { "mason-org/mason.nvim", opts = {} }, "neovim/nvim-lspconfig", }
+	},
+
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
 	{'L3MON4D3/LuaSnip'},
 	{'nvimtools/none-ls.nvim', dependencies='nvim-lua/plenary.nvim'},
-	{
-	    "jay-babu/mason-null-ls.nvim",
-	    event = { "BufReadPre", "BufNewFile" },
-	    dependencies = {
-	      "williamboman/mason.nvim",
-	      "nvimtools/none-ls.nvim",
-	    },
-	},
 
 	-- code context status bar TODO implement the setup function
 	{

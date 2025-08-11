@@ -23,3 +23,11 @@ vim.api.nvim_set_option('timeoutlen', 500)
 
 -- Case-insensitive search
 vim.cmd("set ignorecase")
+
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.cmd("filetype plugin indent on")
+
+-- Fix to weird column shift behavior when entering insert mode with diagnostics
+vim.o.signcolumn = "yes"
